@@ -507,17 +507,17 @@ class MultibyteCharsExtrasTest < ActiveSupport::TestCase
 
   def test_upcase_should_be_unicode_aware
     assert_equal "АБВГД\0F", chars("аБвгд\0f").upcase
-    assert_equal "こにちわ", chars("こにちわ").upcase
+    assert_equal "こんにちは", chars("こんにちは").upcase
   end
 
   def test_downcase_should_be_unicode_aware
     assert_equal "абвгд\0f", chars("аБвгд\0F").downcase
-    assert_equal "こにちわ", chars("こにちわ").downcase
+    assert_equal "こんにちは", chars("こんにちは").downcase
   end
 
   def test_swapcase_should_be_unicode_aware
     assert_equal "аaéÜ\0f", chars("АAÉü\0F").swapcase
-    assert_equal "こにちわ", chars("こにちわ").swapcase
+    assert_equal "こんにちは", chars("こんにちは").swapcase
   end
 
   def test_capitalize_should_be_unicode_aware
@@ -552,10 +552,10 @@ class MultibyteCharsExtrasTest < ActiveSupport::TestCase
     assert_equal "", example.limit(0)
     assert_equal "", example.limit(1)
     assert_equal "こ", example.limit(3)
-    assert_equal "こに", example.limit(6)
-    assert_equal "こに", example.limit(8)
-    assert_equal "こにち", example.limit(9)
-    assert_equal "こにちわ", example.limit(50)
+    assert_equal "こん", example.limit(6)
+    assert_equal "こんに", example.limit(8)
+    assert_equal "こんにち", example.limit(9)
+    assert_equal "こんにちは", example.limit(50)
   end
 
   def test_limit_should_work_on_an_ascii_string
@@ -630,7 +630,7 @@ class MultibyteCharsExtrasTest < ActiveSupport::TestCase
     [
       ["", 0],
       ["abc", 3],
-      ["こにちわ", 4],
+      ["こんにちは", 5],
       [[0x0924, 0x094D, 0x0930].pack("U*"), 2],
       # GB3
       [%w(cr lf), 1],

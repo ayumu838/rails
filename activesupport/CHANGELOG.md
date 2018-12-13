@@ -1,3 +1,7 @@
+*   Fix typo
+
+    *Ayumu Mochizuki*
+
 *   If the same block is `included` multiple times for a Concern, an exception is no longer raised.
 
     *Mark J. Titorenko*, *Vlad Bokov*

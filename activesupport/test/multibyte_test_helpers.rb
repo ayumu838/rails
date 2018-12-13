@@ -27,7 +27,7 @@ module MultibyteTestHelpers
   CACHE_DIR = "#{Dir.tmpdir}/cache/unicode_conformance/#{ActiveSupport::Multibyte::Unicode::UNICODE_VERSION}"
   FileUtils.mkdir_p(CACHE_DIR)
 
-  UNICODE_STRING = "こにちわ"
+  UNICODE_STRING = "こんにちは"
   ASCII_STRING = "ohayo"
   BYTE_STRING = (+"\270\236\010\210\245").force_encoding("ASCII-8BIT").freeze
 

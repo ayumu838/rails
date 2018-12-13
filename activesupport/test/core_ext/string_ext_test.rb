@@ -728,7 +728,7 @@ class StringBehaviourTest < ActiveSupport::TestCase
 end
 
 class CoreExtStringMultibyteTest < ActiveSupport::TestCase
-  UTF8_STRING = "こにちわ"
+  UTF8_STRING = "こんにちは"
   ASCII_STRING = "ohayo".encode("US-ASCII")
   EUC_JP_STRING = "さよなら".encode("EUC-JP")
   INVALID_UTF8_STRING = "\270\236\010\210\245"
